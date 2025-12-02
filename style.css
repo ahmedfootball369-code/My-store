@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #000; /* black background */
+  background-color: white; /* black background */
   margin: 0;
   padding: 0;
   color: white; /* default text white for contrast on black */
@@ -38,7 +38,7 @@ header p {
 
 /* ====== Product Card ====== */
 .product {
-  background-color: #fff; /* cards stay white for contrast */
+  background-color: #2a2a2a; /* cards stay white for contrast */
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(255,255,255,0.1);
