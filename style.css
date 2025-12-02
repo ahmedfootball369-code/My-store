@@ -38,11 +38,11 @@ header p {
 
 /* ====== Product Card ====== */
 .product {
-  background-color: #2a2a2a; /* cards stay white for contrast */
+  background-color: #2a2a2a;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-  color: #000; /* text inside cards black for readability */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  color: white;
 }
 
 .product img {
@@ -65,4 +65,3 @@ button {
 button:hover {
   background-color: #003a8a; /* darker blue on hover */
 }
-
