@@ -31,15 +31,15 @@ header h1 {
   font-size: 36px;
 }
 
-/* ====== Product List Grid (Masonry style) ====== */
+/* ====== Product List Grid (Optimized Masonry) ====== */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* smaller min width */
+  gap: 15px;        /* tighter gap for small cards */
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: start;   /* top-align cards for neat stacking */
+  align-items: start;   /* top-align cards */
   justify-items: center; /* center cards horizontally */
 }
 
