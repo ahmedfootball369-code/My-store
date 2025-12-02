@@ -54,7 +54,7 @@ header p {
 
 /* ====== View Item Buttons ====== */
 button {
-  background-color: #0044cc; /* blue button */
+  background-color: #001f5b; /* dark blue */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -63,5 +63,5 @@ button {
 }
 
 button:hover {
-  background-color: #003a8a; /* darker blue on hover */
+  background-color: #001642; /* even darker on hover */
 }
