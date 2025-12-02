@@ -22,8 +22,15 @@ header {
 
 /* Logo inside header */
 header .logo {
-  width: 80px !important;   /* force width */
-  height: auto !important;  /* maintain aspect ratio */
+  max-width: 80px;
+  height: auto;
+  animation: spinGrow 3s ease-in-out; /* spins + grows on page load */
+}
+
+@keyframes spinGrow {
+  0% { transform: rotate(0deg) scale(0); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 header h1 {
@@ -31,16 +38,15 @@ header h1 {
   font-size: 36px;
 }
 
-/* ====== Product List Grid (Optimized Masonry) ====== */
+/* ====== Product List Grid ====== */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* smaller min width */
-  gap: 15px;        /* tighter gap for small cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* keeps horizontal & vertical spacing equal */
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: start;   /* top-align cards */
-  justify-items: center; /* center cards horizontally */
+  align-items: start; /* align cards to top of row */
 }
 
 /* ====== Product Card ====== */
@@ -53,20 +59,13 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s; /* smooth hover effect */
 }
 
-.product:hover {
-  transform: translateY(-5px); /* slightly lift card */
-  box-shadow: 0 8px 15px rgba(0,0,0,0.7); /* stronger shadow */
-}
-
-/* Product Images (keep proportions) */
 .product img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 }
 
 /* ====== View Item Buttons ====== */
@@ -77,9 +76,9 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s; /* smooth hover */
 }
 
 button:hover {
   background-color: #001642;
 }
+
