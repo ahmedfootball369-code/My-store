@@ -1,84 +1,107 @@
-/* ====== General Page Styling ====== */
+/* ====== GENERAL ====== */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: black; 
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
   color: white;
+  text-align: center;
 }
 
-/* ====== Header ====== */
+h1 {
+  margin: 10px 0;
+  font-size: 40px;
+  color: #ffde59;
+  text-shadow: 0px 0px 10px #ffbf00;
+}
+
+/* ====== HEADER ====== */
 header {
-  background-color: #4CAF50; /* green header */
-  padding: 20px;
-  border-radius: 10px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px; /* spacing between logo and title */
+  padding: 20px 0;
 }
 
-/* Logo inside header */
-header .logo {
-  max-width: 80px;
+.logo {
+  width: 120px;
   height: auto;
-  animation: spinGrow 3s ease-in-out; /* spins + grows on page load */
+  margin-bottom: 10px;
+}
+
+/* ====== INTRO SCREEN ====== */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.intro-logo {
+  width: 200px;
+  animation: spinGrow 3s ease forwards;
 }
 
 @keyframes spinGrow {
-  0% { transform: rotate(0deg) scale(0); }
-  50% { transform: rotate(180deg) scale(1.2); }
-  100% { transform: rotate(360deg) scale(1); }
+  0% {
+    transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3) rotate(720deg);
+    opacity: 1;
+  }
 }
 
-header h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-/* ====== Product List Grid ====== */
+/* ====== PRODUCT GRID ====== */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px; /* keeps horizontal & vertical spacing equal */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
   padding: 20px;
+  width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
-  align-items: start; /* align cards to top of row */
+  margin: auto;
 }
 
-/* ====== Product Card ====== */
+/* ====== PRODUCT CARD ====== */
 .product {
-  background-color: #2a2a2a;
+  background: #222;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.product img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-/* ====== View Item Buttons ====== */
-button {
-  background-color: #001f5b; 
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #001642;
+.product img {
+  width: 100%;
+  border-radius: 10px;
 }
 
+/* ====== HOVER POP OUT EFFECT ====== */
+.product:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ====== BUTTON ====== */
+button {
+  background: #ffde59;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
